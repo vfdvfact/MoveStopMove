@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a9043bbd360004d88964da27dce05c, type: 3}
+  m_Name: New Weapon Data SO
+  m_EditorClassIdentifier: 
+  weapons:
+  - cost: 0
+    isBought: 1
+    weapon: {fileID: 6862588299949433075, guid: 2fa5fbee30252f749bf3b426fc461ff1, type: 3}
+    description: Poor ppl use this
+    name: Axe
+  - cost: 2
+    isBought: 0
+    weapon: {fileID: 4387877423100215817, guid: ae86df9fac503494da2668d84b9fc209, type: 3}
+    description: 3-ray attack
+    name: Uzi
+  - cost: 3
+    isBought: 0
+    weapon: {fileID: 4428163806846390802, guid: 33c25eb605d5b0b4994b5f607f6b8262, type: 3}
+    description: Can comeback
+    name: Boomerang

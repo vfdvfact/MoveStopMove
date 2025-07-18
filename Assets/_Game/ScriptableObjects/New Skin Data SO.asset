@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c4b9be6ae026d42acfbe4e33123c54, type: 3}
+  m_Name: New Skin Data SO
+  m_EditorClassIdentifier: 
+  shorts:
+  - cost: 0
+    isBought: 1
+    mat: {fileID: 2100000, guid: b949d53dd0e434a418b50a02d4110ec2, type: 2}
+  - cost: 2
+    isBought: 0
+    mat: {fileID: 2100000, guid: 3c334bd1acde27d4298fd6114f516b93, type: 2}
+  - cost: 3
+    isBought: 0
+    mat: {fileID: 2100000, guid: ecc7cf327c6282b4da70c6c765ddfe2c, type: 2}
