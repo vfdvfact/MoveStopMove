@@ -8,6 +8,7 @@ public class NPCDieState : IState<Character>
     {
         t.SetAnim("isDie");
         t.isDead = true;
+        t.PauseRun();
     }
 
     public void OnExecute(Character t)

@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class NPC0 : Character
 {
     Vector3 destination;
-    public float patrolRadius=4f;
+    public float patrolRadius=7f;
     public NavMeshAgent agent;
     public NPCIndicatorManager indicatorManager;
     public override void OnEnable()
@@ -44,17 +44,20 @@ public class NPC0 : Character
     }
     public override bool isFindedRandomDestination()
     {
-        Vector2 random2D = Random.insideUnitCircle * patrolRadius;
-        Vector3 randomPosition = new Vector3(random2D.x, TF.position.y, random2D.y) + transform.position;
-
-        NavMeshHit navHit;
-        if (NavMesh.SamplePosition(randomPosition, out navHit, patrolRadius, NavMesh.AllAreas))
+        bool isFinded=false;
+        while (!isFinded)
         {
-            destination = navHit.position;
-            return true;
+            Vector2 random2D = Random.insideUnitCircle * patrolRadius;
+            Vector3 randomPosition = new Vector3(random2D.x, TF.position.y, random2D.y) + transform.position;
+
+            NavMeshHit navHit;
+            if (NavMesh.SamplePosition(randomPosition, out navHit, patrolRadius, NavMesh.AllAreas))
+            {
+                destination = navHit.position;
+                isFinded = true;
+            }
         }
-        else
-            return false;
+        return isFinded;
     }
     public override void PauseRun()
     {

@@ -1434,13 +1434,16 @@ MonoBehaviour:
   hp: 1
   maxHp: 3
   point: 0
+  pointMax: 3
   aniWaiting: 0
   target: {fileID: 0}
   pastTime: 0
   timeLimit: 2
   weaponData: {fileID: 11400000, guid: 0346fca17b9f9f84db88ec29ac78b0e2, type: 2}
-  patrolRadius: 4
+  isDead: 0
+  patrolRadius: 7
   agent: {fileID: 0}
+  indicatorManager: {fileID: 0}
 --- !u!195 &1882015706248359019
 NavMeshAgent:
   m_ObjectHideFlags: 0

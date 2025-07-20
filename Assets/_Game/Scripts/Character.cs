@@ -94,15 +94,6 @@ public class Character : GameUnit
     {
         return new Vector3(endPoint.x - startPoint.x,0, endPoint.z - startPoint.z);
     }
-    public bool IsTargetStillInRange()
-    {
-        if (target!=null&& Vector3.Distance(target.transform.position, transform.position) < detectionRadius)
-        {
-            return true;
-        }
-        else
-            return false;
-    }
     public virtual bool CalcuDameAndDie(float dama)
     {
         return false;

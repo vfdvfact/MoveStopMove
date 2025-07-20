@@ -15,6 +15,8 @@ public class PlayerAction : Character
     public int weaponIndex = 0;
     public Transform startPoint;
     public PlayerDataSO playerData;
+    float timeCounter=0f;
+    [SerializeField] GameObject growEfx;
     [SerializeField] SkinDataSO skinData;
     [SerializeField] Vector3 markPosition = new Vector3(0, 0.1f, 0); 
     [SerializeField] Transform mark;
@@ -34,6 +36,7 @@ public class PlayerAction : Character
         base.AddPoint();
         transform.localScale *= scaleMultiplier;
         detectionRadius *= scaleMultiplier;
+        growEfx.SetActive(true);
         if (point >= pointMax)
         {
             UIManager.Instance.OpenUI<CanvasVictory>();
@@ -189,6 +192,19 @@ public class PlayerAction : Character
         base.Update();
         ShowTarget();
         ShowRange();
+        CheckEfx();
+    }
+    void CheckEfx()
+    {
+        if (growEfx.activeSelf)
+        {
+            timeCounter += Time.deltaTime;
+            if (timeCounter >= 1)
+            {
+                growEfx.SetActive(false);
+                timeCounter = 0;
+            }
+        }
     }
     public override bool GetInputForMove()
     {

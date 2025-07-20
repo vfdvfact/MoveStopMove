@@ -7,17 +7,21 @@ public class NPCMoveState : IState<Character>
     public void OnEnter(Character t)
     {
         //Debug.Log("NPCMove");
+        t.ResumeRun();
         t.SetAnim("isRun");
         t.Move();
-        t.ResumeRun();
+
     }
 
     public void OnExecute(Character t)
     {
-        if (t.currentGun.isCooledDown&&t.GetFilteredCollider() != null && t.CanSeeTarget())
-        {
-            t.PauseRun();
+        if (t.currentGun.isCooledDown&&t.GetFilteredCollider() != null)
+        {            
             t.ChangeState(new NPCAttackState());
+        }
+        else if (t.GetFilteredCollider() != null)
+        {
+            t.ChangeState(new NPCIdleState());
         }
         else if (t.GetInputForMove())
         {
@@ -31,6 +35,6 @@ public class NPCMoveState : IState<Character>
 
     public void OnExit(Character t)
     {
-        
+        t.PauseRun();
     }
 }

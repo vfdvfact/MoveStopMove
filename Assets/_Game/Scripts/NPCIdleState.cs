@@ -8,14 +8,15 @@ public class NPCIdleState : IState<Character>
     {
         //Debug.Log("NPCIdle");
         t.SetAnim("isIdle");
+
     }
     public void OnExecute(Character t)
     {
-        if (t.currentGun.isCooledDown&&t.GetFilteredCollider() != null&&t.CanSeeTarget())
+        if (t.currentGun.isCooledDown&& t.GetFilteredCollider() != null)
         {
             t.ChangeState(new NPCAttackState());
         }
-        else if (t.IsTargetStillInRange())
+        else if (t.GetFilteredCollider() != null)
         {
             return;
         }
@@ -27,6 +28,6 @@ public class NPCIdleState : IState<Character>
 
     public void OnExit(Character t)
     {
-        
+        t.PauseRun();
     }
 }

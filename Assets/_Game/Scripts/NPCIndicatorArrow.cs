@@ -8,7 +8,7 @@ public class NPCIndicatorArrow : GameUnit
     public RectTransform arrowUI;
 
     public float screenEdgeOffset = 50f;
-
+    public Image arrowImage;
     RectTransform canvasRect;
 
     void Start()
@@ -19,11 +19,18 @@ public class NPCIndicatorArrow : GameUnit
     void Update()
     {
         Vector3 screenPos = mainCam.WorldToScreenPoint(npcTarget.position);
+        bool isBehindCamera = screenPos.z < 0;
+
+        if (isBehindCamera)
+        {
+            // Invert position to simulate it in front of the camera
+            screenPos *= -1;
+        }
         bool isOffScreen = screenPos.z < 0 ||
                            screenPos.x < 0 || screenPos.x > Screen.width ||
                            screenPos.y < 0 || screenPos.y > Screen.height;
 
-        gameObject.SetActive(isOffScreen);
+        arrowImage.enabled = isOffScreen;
 
         if (isOffScreen)
         {

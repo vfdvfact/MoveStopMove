@@ -26,6 +26,6 @@ public class NPCAttackState : IState<Character>
 
     public void OnExit(Character t)
     {
-
+        t.PauseRun();
     }
 }

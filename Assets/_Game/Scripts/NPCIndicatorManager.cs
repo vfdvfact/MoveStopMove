@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCIndicatorManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class NPCIndicatorManager : MonoBehaviour
             arrow.npcTarget = npc;
             arrow.mainCam = mainCamera;
             arrow.arrowUI = arrow.gameObject.GetComponent<RectTransform>();
+            arrow.arrowImage = arrow.gameObject.GetComponent<Image>();
             npcArrowMap[npc] = arrow;
         }
         else

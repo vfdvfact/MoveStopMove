@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCooledDown: 0
   bulletRotation: {x: 90, y: 0, z: 0}
-  speed: 1
+  speed: 2
   damage: 1
   ranged: 7
   pastDuration: 0
